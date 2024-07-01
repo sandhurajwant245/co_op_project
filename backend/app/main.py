@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 # MongoDB connection settings
-MONGO_URL = "mongodb+srv://RohitSahu:XJVghAl8GaBtnriK@cluster0.iepjb1n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO_URL = "mongodb+srv://sandhurajwant245:RwE6aPviB0NAjKF8@cluster0.iktaex9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DATABASE = "travel_db"
 COLLECTION = "destinations"
 
