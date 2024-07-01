@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niagara Falls</title>
+    <link rel="stylesheet" href="search.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleDropdown()">☰</div>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="search.html">Home</a>
+            </div>
+        </header>
+        <main>
+            <div class="location-cont">
+                <div class="title">Explore</div>
+                <h2 class="location"></h2>
+            </div>
+            <div class="search-bar">
+                <input type="search" id="search-input" placeholder="Find things to do by country name">
+                <button class="search-button" onclick="filterItems()">search</i></button>
+            </div>
+            <div class="tabs">
+                <button class="tab active" onclick="showTabContent('location', this)">Location</button>
+                <button class="tab" onclick="showTabContent('hotels', this)">Hotels</button>
+                <button class="tab" onclick="showTabContent('food', this)">Food</button>
+                <button class="tab" onclick="showTabContent('adventure', this)">Adventure</button>
+            </div>
+
+            <div id="loading" class="loading">Loading...</div>
+            <section class="popular">
+                <h2>Popular</h2>
+                <a href="#" class="see-all">See all</a>
+                <div class="popular-items">
+
+                </div>
+            </section>
+            <section class="recommended">
+                <h2>Recommended</h2>
+                <div class="recommended-items">
+                </div>
+            </section>
+        </main>
+        <nav class="bottom-nav">
+            <button class="nav-item">🏠</button>
+            <button class="nav-item">🖼️</button>
+            <button class="nav-item">❤️</button>
+            <button class="nav-item">👤</button>
+        </nav>
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        // import josn data
+        let dummyData;
+        let currentCountry;
+        function fetchCountryName() {
+            return fetch('http://ip-api.com/json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch IP information');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    return data;
+                })
+                .catch(error => {
+                    console.error('Error fetching IP information:', error);
+                    throw error;
+                });
+        }
+
+        // Usage
+        fetchCountryName()
+            .then(data => {
+                currentCountry = data.country;
+                fetchJSONData(currentCountry);
+                document.querySelector('.location').textContent = currentCountry + `(${data.countryCode})`;
+            })
+            .catch(error => {
+                console.error('Error getting country name based on IP:', error);
+                // Handle errors (e.g., display error message)
+            });
+
+        async function fetchJSONData(country) {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/by/${country}`);
+                dummyData = await response.json();
+                console.log(dummyData);
+                // Initial display of items
+                displayPopularItems(dummyData?.popular || []);
+                displayRecommendedItems(dummyData?.recommended || []);
+            } catch (error) {
+                console.error("Unable to fetch data:", error);
+            }
+        }
+
+
+        // Function to display popular items
+        function displayPopularItems(items, tabName = "location") {
+            const popularItemsContainer = document.querySelector('.popular-items');
+            popularItemsContainer.innerHTML = '';
+            items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                itemElement.innerHTML = `
+            <img src="${item.imageUrl}" alt="${item.name}" onclick="openDetailsPage('${item.name}',
+            '${tabName}')">
+            <div class="rating">${item.rating || ''}</div>
+        `;
+                popularItemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Function to display recommended items
+        function displayRecommendedItems(items, tabName = "location") {
+            const recommendedItemsContainer = document.querySelector('.recommended-items');
+            recommendedItemsContainer.innerHTML = '';
+            items.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                itemElement.innerHTML = `
+            <img src="${item.imageUrl}" alt="${item.name}" onclick="openDetailsPage('${item.name}', '${tabName}')">
+        `;
+                recommendedItemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Function to filter items based on search input
+        async function filterItems() {
+            try {
+                showLoading();
+                const query = document.getElementById('search-input').value.toLowerCase();
+                dummyData = fetchJSONData(query);
+                localStorage.setItem("country", query);
+                currentCountry = query;
+                displayPopularItems(dummyData?.popular || []);
+                displayRecommendedItems(dummyData?.recommended || []);
+                hideLoading();
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+                hideLoading();
+            }
+        }
+
+        // Function to show loading indicator
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+        }
+
+        // Function to hide loading indicator
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        const getCountryInfo = async (countryName) => {
+            return new Promise((resolve, reject) => {
+                const countryData = dummyData;
+                if (countryData) {
+                    resolve(countryData);
+                } else {
+                    reject('Country not found');
+                }
+            });
+        };
+
+        function showTabContent(tabName, element) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+            let items = dummyData?.[tabName] || [];
+            console.log("tabName", tabName, items)
+            displayPopularItems(items, tabName);
+        }
+
+        function openDetailsPage(itemName, category) {
+            console.log("open", itemName, category);
+            const selectedItem = dummyData[category]?.find(item => item.name === itemName);
+            localStorage.setItem('selectedItem', JSON.stringify(selectedItem));
+            window.location.href = 'details.html';
+        }
+
+
+
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'none' || !dropdownMenu.style.display) {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('click', function (event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            if (!dropdownMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

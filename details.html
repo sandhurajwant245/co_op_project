@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="details.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleDropdown()">☰</div>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="search.html">Home</a>
+            </div>
+        </header>
+        <div class="details-section">
+            <img id="detail-image" src="" alt="">
+            <h2 id="detail-name"></h2>
+            <p id="detail-rating"></p>
+            <p id="detail-description"></p>
+            <div class="facilities">
+                <p>Facilities:</p>
+                <ul id="detail-facilities"></ul>
+            </div>
+            <p id="detail-price"></p>
+            <button>Book Now</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
+            if (selectedItem) {
+                document.getElementById('detail-image').src = selectedItem?.imageUrl;
+                document.getElementById('detail-name').textContent = selectedItem?.name;
+                document.getElementById('detail-rating').textContent = selectedItem?.rating ? `${selectedItem?.rating} (${selectedItem?.reviews} Reviews)` : '';
+                document.getElementById('detail-description').textContent = selectedItem.description || '';
+                document.getElementById('detail-price').textContent = `Price: ${selectedItem.price || ''}`;
+
+                const facilitiesList = document.getElementById('detail-facilities');
+                facilitiesList.innerHTML = '';
+                if (selectedItem.facilities) {
+                    selectedItem.facilities.forEach(facility => {
+                        const li = document.createElement('li');
+                        li.textContent = facility;
+                        facilitiesList.appendChild(li);
+                    });
+                }
+            } else {
+                document.querySelector('.details-section').innerHTML = '<p>Item details not found.</p>';
+            }
+        });
+
+
+        // menu icon
+        // Function to toggle the dropdown menu
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'none' || !dropdownMenu.style.display) {
+                dropdownMenu.style.display = 'block';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        }
+
+        // Hide the dropdown menu if clicked outside
+        document.addEventListener('click', function (event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            if (!dropdownMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

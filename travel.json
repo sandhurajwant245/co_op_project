@@ -1,0 +1,216 @@
+{
+    "Canada": {
+        "popular": [
+            {
+                "name": "Niagara Falls",
+                "imageUrl": "niagara_falls.png",
+                "rating": 4.1,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "CN Tower",
+                "imageUrl": "cn_tower.png",
+                "rating": 4.7,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Niagara Falls",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRy2vAGuAI9t5lB3nCmgP0hXEAg0w7951MTmfm864gXXHNGZT91kM0ZA4wH9aKNVUDhjw&usqp=CAU",
+                "rating": 4.1,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "CN Tower",
+                "imageUrl": "https://blog.businesstripfriend.com/upload/gallery/articles/1484694233_34131.jpg",
+                "rating": 4.7,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "recommended": [
+            {
+                "name": "Explore Niagara",
+                "imageUrl": "https://cdn.aarp.net/content/dam/aarp/travel/destinations/2021/08/1140-journey-behind-the-falls.jpg",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Adventure",
+                "imageUrl": "https://www.news-herald.com/wp-content/uploads/2022/06/TNH-L-NIAGARAFALLS-WBOX-060922-09.jpg?w=466",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "location": [
+            {
+                "name": "Niagara Falls",
+                "imageUrl": "niagara_falls.png",
+                "description": "A breathtaking natural wonder located on the border of Ontario, Canada, and New York, USA.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "CN Tower",
+                "imageUrl": "cn_tower.png",
+                "description": "A 553.3 m-high concrete communications and observation tower located in Downtown Toronto.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Home Stay Niagara",
+                "imageUrl": "https://maplestakeinn.com/wp-content/uploads/2024/05/a63b7d13.jpg",
+                "rating": 4.5,
+                "description": "Cozy and comfortable home stays near Niagara Falls.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Toronto Apartments",
+                "imageUrl": "https://maplestakeinn.com/wp-content/uploads/2024/05/pool-chairs-umbrella-around-swimming-pool-with-coconut-palm-tree_1339-121645.jpg",
+                "rating": 4.3,
+                "description": "Modern apartments with a stunning view of the Toronto skyline.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "adventure": [
+            {
+                "name": "Niagara Jet Adventures",
+                "imageUrl": "https://r1imghtlak.mmtcdn.com/95c55596d2d811ed97ff0a58a9feac02.webp?&downsize=900:675&output-format=jpg",
+                "rating": 4.8,
+                "description": "Experience the thrill of a lifetime with jet boat rides on the Niagara River.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "EdgeWalk at the CN Tower",
+                "imageUrl": "https://r1imghtlak.mmtcdn.com/459d46e66d3211eaa38a0242ac110004.jpg?&downsize=900:675&crop=900:675;56,0&output-format=jpg",
+                "rating": 4.9,
+                "description": "A hands-free walk on the ledge of the CN Tower, 116 stories above the ground.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "food": [
+            {
+                "name": "Skylon Tower Revolving Dining Room",
+                "imageUrl": "https://food-guide.canada.ca/sites/default/files/styles/slick_gallery_mobile/public/2024-04/chicken%20lettuce%20wrap-heroweb-ready.jpg",
+                "rating": 4.6,
+                "description": "Fine dining with a revolving view of Niagara Falls.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "360 Restaurant at the CN Tower",
+                "imageUrl": "https://food-guide.canada.ca/sites/default/files/styles/slick_gallery_mobile/public/2020-07/grilled_salmon.jpg",
+                "rating": 4.7,
+                "description": "A dining experience with a panoramic view of Toronto from the top of the CN Tower.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ]
+    },
+    "usa": {
+        "popular": [
+            {
+                "name": "Grand Canyon",
+                "imageUrl": "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1300&maxheight=1300&autorotate=false",
+                "rating": 4.9,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Statue of Liberty",
+                "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/7/2021/09/GettyImages-1279734279-24aade8.jpg?quality=90&resize=980,654",
+                "rating": 4.8,
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "recommended": [
+            {
+                "name": "Yellowstone National Park",
+                "imageUrl": "yellowstone.png",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Disney World",
+                "imageUrl": "disney_world.png",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "location": [
+            {
+                "name": "Grand Canyon",
+                "imageUrl": "https://www.nps.gov/grca/planyourvisit/images/mather-point-2021.jpg?maxwidth=1300&maxheight=1300&autorotate=false",
+                "description": "A steep-sided canyon carved by the Colorado River in Arizona, United States.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Statue of Liberty",
+                "imageUrl": "https://images.immediate.co.uk/production/volatile/sites/7/2021/09/GettyImages-1279734279-24aade8.jpg?quality=90&resize=980,654",
+                "description": "A colossal neoclassical sculpture on Liberty Island in New York Harbor.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "home": [
+            {
+                "name": "New York City Apartments",
+                "imageUrl": "nyc_apartments.png",
+                "rating": 4.4,
+                "description": "Luxury apartments in the heart of New York City.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Grand Canyon Lodges",
+                "imageUrl": "grand_canyon_lodge.png",
+                "rating": 4.6,
+                "description": "Comfortable lodges with a view of the Grand Canyon.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "adventure": [
+            {
+                "name": "White Water Rafting",
+                "imageUrl": "white_water_rafting.png",
+                "rating": 4.9,
+                "description": "Thrilling white water rafting experiences in various locations.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            },
+            {
+                "name": "Hiking in Yellowstone",
+                "imageUrl": "hiking_yellowstone.png",
+                "rating": 4.8,
+                "description": "Explore the vast landscapes of Yellowstone National Park on foot.",
+                "detail-facilities": " Department of Information Technology",
+                "price": 100
+            }
+        ],
+        "food": [
+            {
+                "name": "Le Bernardin",
+                "imageUrl": "le_bernardin.png",
+                "rating": 4.8,
+                "description": "A renowned seafood restaurant in New York City."
+            },
+            {
+                "name": "El Tovar Dining Room",
+                "imageUrl": "el_tovar.png",
+                "rating": 4.6,
+                "description": "Fine dining with a view of the Grand Canyon."
+            }
+        ]
+    }
+}

@@ -1,0 +1,131 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.details-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-section img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.details-section p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.facilities {
+    margin-top: 20px;
+}
+
+.facilities p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.facilities ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.facilities li {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facilities li::before {
+    content: url('path_to_your_icon.png');
+    margin-right: 5px;
+}
+
+.details-section button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.details-section button:hover {
+    background-color: #0056b3;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+
+/* CSS for dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}

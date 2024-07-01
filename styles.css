@@ -1,0 +1,140 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+.container {
+    max-width: 400px;
+    max-height: 90vh;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 90vh;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero-text h1 {
+    font-size: 1em;
+    margin: 0;
+}
+
+.hero-text button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background-color: #0056b3;
+}
+
+.search-section {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-header input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tabs {
+    margin-top: 20px;
+}
+
+.tabs button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    background-color: #e0e8ef;
+}
+
+.popular-section,
+.recommended-section {
+    margin-top: 20px;
+}
+
+.popular-items,
+.recommended-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    width: 48%;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.details-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.details-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facilities {
+    margin-top: 10px;
+}
+
+.facilities ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.facilities ul li {
+    display: inline;
+    margin-right: 10px;
+}
